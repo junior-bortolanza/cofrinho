@@ -1,5 +1,8 @@
 package cofrinho;
 
+import java.util.Objects;
+
+// Classe Abstrata MOEDA;
 public abstract class Moeda {
 	//Atributo da classe moeda
 	private Double valor;
@@ -25,8 +28,29 @@ public abstract class Moeda {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
-	} 
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(valor);
+	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Moeda other = (Moeda) obj;
+		return Objects.equals(valor, other.valor);
+	}
+
+	@Override
+	public String toString() {
+		return "Moeda = " + valor + "]";
+	} 
 	
 	
 

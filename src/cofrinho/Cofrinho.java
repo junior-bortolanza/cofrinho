@@ -37,11 +37,16 @@ public class Cofrinho {
 		
 	}
 	
+	//Método de conversão de moedas.
 	public void totalConvertido() {
-		for(Moeda moeda : listaMoeda) {
-			moeda.converter(); // Chama o método converter de cada moeda.
-		}
-	}
+        double total = 0;
+        for (Moeda moeda : this.listaMoeda) {
+            total += moeda.converter();
+        }
+
+        // Em vez de retornar, o método agora imprime o total formatado
+        System.out.printf("O valor total convertido para Reais é: R$ %.2f\n", total);
+    }
 	
 
 	
